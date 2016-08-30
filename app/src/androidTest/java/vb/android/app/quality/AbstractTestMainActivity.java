@@ -16,6 +16,7 @@
 
 package vb.android.app.quality;
 
+import android.os.Build;
 import android.support.test.espresso.intent.rule.IntentsTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -33,6 +34,8 @@ import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import vb.android.app.quality.ui.MainActivity;
 
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static android.support.test.InstrumentationRegistry.getTargetContext;
 import static junit.framework.Assert.assertTrue;
 
 /**
@@ -68,6 +71,13 @@ public abstract class AbstractTestMainActivity {
             mMockWebServer.start(Integer.parseInt(mActivityRule.getActivity().getString(R.string.port)));
         } catch (IOException e) {
             throw e;
+        }
+
+        // In M+, WRITE_EXTERNAL_STORAGE needs to be granted for screenshots to work.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getInstrumentation().getUiAutomation().executeShellCommand(
+                    "pm grant " + getTargetContext().getPackageName()
+                            + " android.permission.WRITE_EXTERNAL_STORAGE");
         }
     }
 
