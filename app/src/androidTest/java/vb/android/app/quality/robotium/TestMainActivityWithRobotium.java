@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.vincentbrison.app.quality.robotium;
+package vb.android.app.quality.robotium;
 
 import android.support.test.InstrumentationRegistry;
 import android.widget.Button;
@@ -22,8 +22,8 @@ import android.widget.EditText;
 
 import com.robotium.solo.Condition;
 import com.robotium.solo.Solo;
-import com.vincentbrison.app.quality.AbstractTestMainActivity;
 
+import vb.android.app.quality.AbstractTestMainActivity;
 import vb.android.app.quality.R;
 import vb.android.app.quality.ui.MainActivity;
 

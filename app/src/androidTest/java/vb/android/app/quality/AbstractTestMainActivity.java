@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.vincentbrison.app.quality;
+package vb.android.app.quality;
 
 import android.support.test.espresso.intent.rule.IntentsTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -31,8 +31,6 @@ import java.io.IOException;
 
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
-import vb.android.app.quality.AssetsHelper;
-import vb.android.app.quality.R;
 import vb.android.app.quality.ui.MainActivity;
 
 import static junit.framework.Assert.assertTrue;

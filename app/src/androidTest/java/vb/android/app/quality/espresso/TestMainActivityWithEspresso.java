@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-package com.vincentbrison.app.quality.espresso;
+package vb.android.app.quality.espresso;
 
 import android.app.Instrumentation;
 import android.content.Intent;
 import android.support.test.espresso.intent.Intents;
 import android.support.test.espresso.intent.matcher.IntentMatchers;
 
-import com.vincentbrison.app.quality.AbstractTestMainActivity;
-
+import vb.android.app.quality.AbstractTestMainActivity;
 import vb.android.app.quality.R;
 
 import static android.support.test.espresso.Espresso.onView;
