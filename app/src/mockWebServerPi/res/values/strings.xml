@@ -20,5 +20,4 @@
     <string name="max_desc">digit(s)</string>
     <string name="algo">mock</string>
     <string name="url">http://localhost</string>
-    <string name="port">4000</string>
 </resources>
