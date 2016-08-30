@@ -16,6 +16,8 @@
 
 package vb.android.app.quality;
 
+import android.content.Context;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,13 +37,13 @@ public final class AssetsHelper {
      * @return the content of the given asset as a plain string.
      * @throws IOException if needed.
      */
-    public static String getStringFromAsset(String assetPath) throws IOException {
+    public static String getStringFromAsset(Context context, String assetPath) throws IOException {
         StringBuilder buf = new StringBuilder();
         InputStream inputStream = null;
         String str = null;
 
         try {
-            inputStream = InjectorHelper.getApplicationComponent().context().getAssets().open(assetPath);
+            inputStream = context.getAssets().open(assetPath);
             BufferedReader in = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
 
             while ((str = in.readLine()) != null) {

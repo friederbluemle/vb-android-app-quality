@@ -78,7 +78,8 @@ public abstract class AbstractTestMainActivity {
 
     @Test
     public void testThatDefaultBehaviorIsWorking() throws Exception {
-        mMockWebServer.enqueue(new MockResponse().setBody(AssetsHelper.getStringFromAsset("stubs/rank_ok.json")));
+        String body = AssetsHelper.getStringFromAsset(mActivityRule.getActivity(), "stubs/rank_ok.json");
+        mMockWebServer.enqueue(new MockResponse().setBody(body));
         userAskPIComputation();
         assertTrue("After a Pi computation, user is able to send its result.", checkPIComputationWentOK());
         Spoon.screenshot(mActivityRule.getActivity(), "checkPIComputationWentOK");
